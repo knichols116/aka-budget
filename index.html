@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>AKABudget</title>
+</head>
+<body>
+	<header>
+		<img src="img/akabudget-logo.png" alt="logo" class="logo img-responsive">
+		<div>
+			<p class="text-center">Budgeting <i>your</i> way.</p>
+			<button type="button" class="btn btn-default btn-lg center-block" data-toggle="modal" data-target="#myModal">
+			  Create New Budget
+			</button>
+		</div>
+	</header>
+
+	<!-- section for new budget button & modal -->
+	<section class="new-budget-section">
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">New Budget</h4>
+		      </div>
+		      <div class="modal-body">
+						<form action="" name="newBudgetForm" method="get">
+							<label for="totalIncome">Total Income</label><br>
+							<input name="income" id="incomeInput" type="number" step="0.01"><br>
+							<label for="rent">Rent</label><br>
+							<input name="rent" id="rentInput" type="number" step="0.01"><br>
+							<label for="bills">Bills</label><br>
+							<input name="bills" id="billsInput" type="number" step="0.01"><br>
+							<label for="groceries">Groceries</label><br>
+							<input name="groceries" id="groceriesInput" type="number" step="0.01"><br>
+							<label for="entertainment">Entertainment</label><br>
+							<input name="entertainment" id="entertainmentInput" type="number" step="0.01"><br>
+							<label for="personalCare">Personal Care</label><br>
+							<input name="personalCare" id="personalCareInput" type="number" step="0.01"><br/>
+							<label for="misc">Misc</label><br>
+							<input name="misc" id="miscInput" type="number" step="0.01"><br>
+							<label for="budgetType">Select a Budget Schedule</label>
+							<select name="budgetType" id="budgetTypeInput" class="input-field" required><br>
+			          <option value="Weekly">Weekly</option>
+			          <option value="Two Week">Biweekly</option>
+								<option value="Monthly">Monthly</option>
+			        </select> <br>
+							<label for="date">Start Date</label><br>
+			        <input type="date" name="startDate" id="startDate" class="input-field" required><br>
+							<label for="date">End Date</label><br>
+			        <input type="date" name="endDate" id="endDate" class="input-field" required><br>
+						</form>
+		      </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" id="newBudgetBtn" class="btn btn-default btn-submit">Submit</button>
+					</div>
+		    </div>
+		  </div>
+		</div>
+	</section>
+	<!-- section for pie chart and legend -->
+	<section class="pie-chart-and-legend">
+		<div class="row">
+			<div class="col-sm-6 col-md-5 col-md-offset-2 piechart-container">
+				<div id="piechart"></div>
+			</div>
+			<div class="col-sm-6 col-md-5 legend-container">
+				<div id="legend">
+					<h3 id="legendHeader"></h3>
+					<h4 id="budgetDates"></h4>
+					<div class="legend-total">
+						<span class="dot totalRemaining-dot"></span>
+						<label class="legend-labels">Total Remaining</label>
+					</div>
+					<br>
+					<div class="legend-rent">
+						<span class="dot rent-dot"></span>
+						<label class="legend-labels">Rent</label>
+					</div>
+					<br>
+					<div class="legend-bills">
+						<span class="dot bills-dot"></span>
+						<label class="legend-labels">Bills</label>
+					</div>
+					<br>
+					<div class="legend-entertainment">
+						<span class="dot entertainment-dot"></span>
+						<label class="legend-labels">Entertainment</label>
+					</div>
+					<br>
+					<div class="legend-groceries">
+						<span class="dot groceries-dot"></span>
+						<label class="legend-labels">Groceries</label>
+					</div>
+					<br>
+					<div class="legend-personal-care">
+						<span class="dot personal-care-dot"></span>
+						<label class="legend-labels">Personal Care</label>
+					</div>
+					<br>
+					<div class="legend-misc">
+						<span class="dot misc-dot"></span>
+						<label class="legend-labels">Misc</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Add New Expense Form -->
+	<section>
+    <div class="container">
+			<div class="row">
+				<div class="col-xs-10 col-sm-12">
+					<h3 class="text-center">Expenses</h3>
+		      <form id="newExpenseForm" name="newExpenseForm">
+		        <label for="date">Date</label>
+		        <input type="date" name="date" class="input-field" required>
+		        <label for="amount">Amount</label>
+		        <input type="number" step="0.01" name="amount" class="input-field" required>
+		        <select id="formCategory" name="category" class="input-field" required>
+		          <option value="Choose a Category" selected>Choose a Category</option>
+		          <option value="Rent">Rent</option>
+		          <option value="Bills">Bills</option>
+		          <option value="Groceries">Groceries</option>
+		          <option value="Entertainment">Entertainment</option>
+		          <option value="PersonalCare">Personal Care</option>
+		          <option value="Misc">Misc</option>
+		        </select>
+		        <label for="memo">Memo(optional)</label>
+		        <input type="text" name="memo" class="input-field">
+		        <button id="newExpenseButton" type="submit" class="btn btn-default btn-submit">Add New Expense</button>
+		      </form>
+				</div>
+			</div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </section>
+
+	<!-- Expense Table -->
+  <section>
+    <div class="container">
+      <table>
+        <tbody id="expenseTable">
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Memo</th>
+            <th>Balance</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+	<footer>
+		<p>© AKAbudget created by Andi, Korey, and Andy</p>
+	</footer>
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js" charset="utf-8"></script>
+</body>
+</html>

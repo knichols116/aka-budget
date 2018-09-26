@@ -1,0 +1,196 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+}
+
+p, button, label, input, option, th, td {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	background-color: #eff2ed;
+}
+
+.btn {
+	border-style: none;
+	background-color: ##f3fcea;
+	color: #3d3d3d;
+	font-weight: 700;
+}
+
+.btn.btn-submit:hover {
+	background-color: #76b267;
+	color: #fff;
+	font-weight: 700;
+}
+
+.btn:hover {
+	border-style: none;
+	background-color: #aee2a1;
+	color: #fff;
+	font-weight: 700;
+}
+
+/* header styles */
+
+header {
+	background-image: url(../img/money-header-img.png);
+	background-size: cover;
+	background-position: bottom;
+	position: relative;
+	height: 70vh;
+}
+
+header div {
+	margin-top: 70px;
+	background-color: rgba(0, 0, 0, .3);
+	padding: 50px;
+}
+
+.logo {
+    height: 100px;
+}
+
+/* header h1 {
+	margin-top: 0;
+} */
+
+.header:before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background: rgba(0,0,0,.6);
+}
+
+header p {
+	color: #fff;
+	font-size: 35px;
+}
+
+/* new budget styles */
+.modal-body label {
+	margin-bottom: 1px;
+}
+
+.modal-body input {
+	margin-top: 2px;
+	margin-bottom: 5px;
+}
+
+
+/* new expense styles */
+.input-field {
+  margin-right: 34px;
+}
+
+table, th, td {
+  border: 1px solid #000000;
+  padding: 5px;
+}
+
+table, form {
+  margin-top: 30px;
+  width: 100%;
+}
+
+
+/* piechart styles */
+.piechart-container {
+	margin-top: 0px;
+	margin-bottom: 30px;
+	height: 380px;
+}
+
+.legend-container {
+	margin-top: 94px;
+	margin-bottom: 30px;
+}
+
+.legend-labels:hover {
+	cursor: pointer;
+}
+
+#piechart {
+  min-height: 450px;
+}
+
+.row {
+  margin:0 !important;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.totalRemaining-dot{
+   background-color: #83e775;
+}
+
+.rent-dot {
+   background-color: #76a8e9;
+}
+
+.bills-dot {
+   background-color: #9966cc;
+}
+
+.entertainment-dot{
+   background-color: #cc66cc;
+}
+
+.groceries-dot{
+   background-color: #f48484;
+}
+
+.personal-care-dot {
+   background-color: #f9b974;
+}
+
+.misc-dot {
+   background-color: #f6ef61;
+}
+
+.legend-total{
+   display: inline-block;
+}
+
+.legend-rent{
+   display: inline-block;
+}
+
+.legend-bills{
+   display: inline-block;
+}
+
+.legend-entertainment{
+   display: inline-block;
+}
+
+.legend-groceries{
+   display: inline-block;
+}
+
+.legend-personal-care{
+   display: inline-block;
+}
+
+.legend-misc{
+   display: inline-block;
+}
+
+
+/* footer styles */
+footer {
+	background-color: rgba(0,0,0,.3);
+	height: 50px;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+footer p {
+	color: #fff;
+}
